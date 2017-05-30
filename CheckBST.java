@@ -1,4 +1,5 @@
 public class CheckBST {
+	Node prev = null;
 	public class Node {
 		int data;
 		Node left;
@@ -16,9 +17,7 @@ public class CheckBST {
 	{
 		if(node==null)
 			return true;
-		Node prev = null;
-		while(node!=null)
-		{
+		
 			if(!isBST(node.left))
 				return false;
 			 
@@ -26,9 +25,7 @@ public class CheckBST {
 				 return false;
 			 prev = node;
 			 return isBST(node.right);
-		}
 		
-		return true;
 	}
 	
 	 /* Driver program to test above functions */
